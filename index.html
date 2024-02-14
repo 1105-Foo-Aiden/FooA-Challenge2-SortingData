@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body class="bg-secondary text-white">
+    <div class="container">
+      <h1 style="display: flex; justify-content: center; color: black;">Fun with Data</h1>
+      <div class="row">
+        <div class="col">
+          <label for="sortByMenu">Sorting</label>
+          <select name="SortBy" id="sortByMenu" class="form-select">
+            <option value="selected">Pick a category to sort by</option>
+            <div><hr class="dropdown-divider" /></div>
+            <option class="value1 dropdown-item">ID</option>
+            <div><hr class="dropdown-divider" /></div>
+            <option class="value2 dropdown-item">First Name</option>
+            <div><hr class="dropdown-divider" /></div>
+            <option class="value3 dropdown-item">Last Name</option>
+            <div><hr class="dropdown-divider" /></div>
+            <option class="value4 dropdown-item">Height</option>
+            <div><hr class="dropdown-divider" /></div>
+            <option class="value5 dropdown-item">Age</option>
+          </select>
+        </div>
+        <div class="col">
+          <label for="peopleCount">Size</label>
+          <select name="Amount of People" id="peopleCount" class="form-select">
+            <option value="selected">How many people should be shown</option>
+            <div><hr class="dropdown-divider" /></div>
+            <option class="value1 dropdown-item">10</option>
+            <div><hr class="dropdown-divider" /></div>
+            <option class="value2 dropdown-item">20</option>
+            <div><hr class="dropdown-divider" /></div>
+            <option class="value3 dropdown-item">30</option>
+            <div><hr class="dropdown-divider" /></div>
+            <option class="value4 dropdown-item">40</option>
+            <div><hr class="dropdown-divider" /></div>
+            <option class="value5 dropdown-item">50</option>
+          </select>
+        </div>
+        <div class="col">
+          <label for="reverseBtn">Flip</label>
+          <button id="reverseBtn" type="button" class="btn btn-dark" style="width: 50%;">&#8639;&#8642;</button></div>
+      </div>
+    </div>
+      <br><br><br>
+        <div class="container" style="color: black; background-color:bisque">
+          <table id="dataTable" style="width: 100%; ">
+          <thead>
+          <tr>
+            <th>ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Height</th>
+            <th>Age </th>
+          </tr>
+        </thead>
+        <tbody id="tablebody" class="table"></tbody>
+         </table>
+        </div>  
+      </div>
+    <br><br>
+    <div class="container" style="display: flex; justify-content: center">
+      <div class="row">
+        <div class="col"><button class="btn btn-primary" id="prevBtn">Previous</button></div>
+        <div class="col"><button class="btn btn-primary" id="nextBtn">Next</button></div>
+      </div>
+    </div>
+    <!-- bootstrap -->
+    <script type="module" src="./scripts/app.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
