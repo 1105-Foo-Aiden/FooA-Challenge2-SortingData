@@ -143,6 +143,9 @@ const Populate = (arr) => {
     ageCell.textContent = People.Age;
 
     row.append(idCell, firstNameCell, lastNameCell, heightCell, ageCell);
+    row.style.borderBottomColor = 'black'
+    row.style.borderBottomWidth = '1px'
+    row.style.paddingTop = '4px'
     tablebody.appendChild(row);
   });
 };
