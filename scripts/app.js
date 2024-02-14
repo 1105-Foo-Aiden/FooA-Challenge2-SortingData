@@ -6,31 +6,30 @@ let peopleCount = document.getElementById("peopleCount");
 let sortByMenu = document.getElementById("sortByMenu");
 let reverseBtn = document.getElementById("reverseBtn");
 let reverse = false;
-let limit;
+let limit = 100;
 let startInc = 0;
 
-
 peopleCount.addEventListener("click", () => {
-  limit = parseInt(peopleCount.value)
-  console.log(limit);
+ limit = peopleCount.value == 'selected' ? 100 : parseInt(peopleCount.value)
+ console.log(limit);
   SwitchCase(sortByMenu.value);
 });
 
-nextBtn.addEventListener('click', () =>{
-  startInc += limit
-  if(startInc >= data.People.length){ 
-    startInc = 0
+nextBtn.addEventListener("click", () => {
+  startInc += limit;
+  if (startInc >= data.People.length) {
+    startInc = 0;
   }
-  SwitchCase(sortByMenu.value)
-})
+  SwitchCase(sortByMenu.value);
+});
 
-prevBtn.addEventListener('click', () =>{
-  startInc -= limit
-  if(startInc < 0){
-    startInc = data.People.length - limit
+prevBtn.addEventListener("click", () => {
+  startInc -= limit;
+  if (startInc < 0) {
+    startInc = data.People.length - limit;
   }
-  SwitchCase(sortByMenu.value)
-})
+  SwitchCase(sortByMenu.value);
+});
 //Sort by Height
 const SortByHeight = () => {
   const sortedArr = data.People.sort((a, b) => {
@@ -151,7 +150,8 @@ const Populate = (arr) => {
 Populate(data.People);
 
 // Switch case as a fucntion to use for reverseBtn
-const SwitchCase = e => {
+const SwitchCase = (e) => {
+  console.log(reverse)
   switch (e) {
     case "First Name":
       SortByFirstName();
@@ -169,8 +169,9 @@ const SwitchCase = e => {
       SortByAge();
       break;
     default:
-      Populate(data.People);
-      break;
+   SortByID()
+   break;
+
   }
 };
 sortByMenu.addEventListener("click", () => {
@@ -179,5 +180,5 @@ sortByMenu.addEventListener("click", () => {
 
 reverseBtn.addEventListener("click", () => {
   reverse = !reverse ? true : false;
-  return sortByMenu.value === 'selected' ? Populate(data.People):SwitchCase(sortByMenu.value);
+  SwitchCase(sortByMenu.value);
 });
